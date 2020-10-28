@@ -1,7 +1,5 @@
 package com.example.madlevel4task2.model
 
-import Moves
-import Outcomes
 import android.os.Parcelable
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
@@ -15,27 +13,27 @@ import java.util.*
 data class Match (
     @ColumnInfo
     @NonNull
-    var playerMove: Moves,
+    var playerMove: Int,
 
     @ColumnInfo
     @NonNull
-    var computerMove: Moves,
+    var computerMove: Int,
 
     @ColumnInfo
     var timestamp: Date,
 
     @ColumnInfo
     @NonNull
-    var result: Outcomes,
+    var result: Int,
+
+    @ColumnInfo
+    var draw: Boolean,
 
     @ColumnInfo
     var win: Boolean,
 
     @ColumnInfo
     var loose: Boolean,
-
-    @ColumnInfo
-    var draw: Boolean,
 
     @ColumnInfo
     @PrimaryKey(autoGenerate = true)

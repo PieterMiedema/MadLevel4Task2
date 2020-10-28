@@ -22,11 +22,23 @@ class MatchRepository(context: Context) {
         matchDao.insertMatches(match)
     }
 
-    suspend fun deleteMatches(match: Match) {
-        matchDao.deleteMatches(match)
+    suspend fun deleteMatches() {
+        matchDao.deleteMatches()
     }
 
     suspend fun updateMatches(match: Match) {
         matchDao.updateMatches(match)
+    }
+
+    suspend fun getDrawCount(): Int {
+        return matchDao.getDrawCount()
+    }
+
+    suspend fun getWinCount(): Int {
+        return matchDao.getWinCount()
+    }
+
+    suspend fun getLooseCount(): Int {
+        return matchDao.getLooseCount()
     }
 }

@@ -17,20 +17,22 @@ class HistoryAdapter (private val matches: List<Match>) : RecyclerView.Adapter<H
             var context = itemView.context
 
             when (match.computerMove) {
-                "rock" -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.rock)
-                "paper" -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.paper)
-                "scissors" -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.scissors)
+                1 -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.rock)
+                2 -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.paper)
+                3 -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.scissors)
             }
             when (match.playerMove) {
-                "rock" -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.rock)
-                "paper" -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.paper)
-                "scissors" -> itemView.computerRPS.foreground = context.getDrawable(R.drawable.scissors)
+                1 -> itemView.playerRPS.foreground = context.getDrawable(R.drawable.rock)
+                2 -> itemView.playerRPS.foreground = context.getDrawable(R.drawable.paper)
+                3 -> itemView.playerRPS.foreground = context.getDrawable(R.drawable.scissors)
             }
             when (match.result) {
-                "computer" -> itemView.winner.text = context.getText(R.string.computer_wins)
-                "player" -> itemView.winner.text = context.getText(R.string.player_wins)
-                "draw" -> itemView.winner.text = context.getText(R.string.draw)
+                6 -> itemView.winner.text = context.getText(R.string.computer_wins)
+                5 -> itemView.winner.text = context.getText(R.string.player_wins)
+                4 -> itemView.winner.text = context.getText(R.string.draw)
             }
+
+            itemView.timeStamp.text = match.timestamp.toString()
         }
     }
 

@@ -11,9 +11,18 @@ interface MatchDao {
     @Insert
     suspend fun insertMatches(match: Match)
 
-    @Delete
-    suspend fun deleteMatches(match: Match)
+    @Query("DELETE FROM matchTable")
+    suspend fun deleteMatches()
 
     @Update
     suspend fun updateMatches(match: Match)
+
+    @Query("SELECT COUNT(draw) FROM matchTable WHERE draw = 1")
+    suspend fun getDrawCount(): Int
+
+    @Query("SELECT COUNT(win) FROM matchTable WHERE win = 1")
+    suspend fun getWinCount(): Int
+
+    @Query("SELECT COUNT(loose) FROM matchTable WHERE loose = 1")
+    suspend fun getLooseCount(): Int
 }

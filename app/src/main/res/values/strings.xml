@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">MadLevel4Task2</string>
+    <string name="app_name">Mad Level 4 Task 2</string>
+    <string name="your_game_history">Your Game History</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="computer_wins">Computer Wins!</string>
@@ -11,4 +12,7 @@
     <string name="you">You</string>
     <string name="instructions">Instructions: select rock, paper or scissors to play.</string>
     <string name="all_time_stats">Your all time statistics \nWin: %1d \tDraw: %2d Lose: %3d</string>
+    <string name="menu_back">menu back</string>
+    <string name="menu_delete">menu delete</string>
+    <string name="menu_history">menu history</string>
 </resources>
